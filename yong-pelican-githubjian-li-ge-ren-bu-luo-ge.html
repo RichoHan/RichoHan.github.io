@@ -104,8 +104,8 @@
 <h3>建立Blog</h3>
 <p>先建立目錄</p>
 <blockquote>
-<p><code>mkdir myblog</code>
-`cd myblog'</p>
+<p><code>mkdir myblog</code></p>
+<p><code>cd myblog</code></p>
 </blockquote>
 <p>pelican 快速建立部落格指令</p>
 <blockquote>
@@ -115,26 +115,26 @@
 日後可以從pelicanconf.py裡面更改設定</p>
 <p>建立出來的目錄結構：</p>
 <blockquote>
-<p>myblog/
-├── content              # 存放输入的源文件
-│   └── (pages)          # 存放手工创建的静态页面
-├── output               # 生成的输出文件
-├── develop_server.sh    # 方便开启测试服务器
-├── Makefile             # 方便管理博客的Makefile
-├── pelicanconf.py       # 主配置文件
-└── publishconf.py       # 发布时使用的配置文件</p>
+<p><code>myblog/</code></p>
+<p><code>├── content              # 存放输入的源文件</code></p>
+<p><code>│   └── (pages)          # 存放手工创建的静态页面</code></p>
+<p><code>├── output               # 生成的输出文件</code></p>
+<p><code>├── develop_server.sh    # 方便开启测试服务器</code></p>
+<p><code>├── Makefile             # 方便管理博客的Makefile</code></p>
+<p><code>├── pelicanconf.py       # 主配置文件</code></p>
+<p><code>└── publishconf.py       # 发布时使用的配置文件</code></p>
 </blockquote>
 <h3>撰寫文章</h3>
 <p>先進入content目錄資料夾，用Markdown語法寫如下文章，副檔名須為.mdown：</p>
 <blockquote>
-<p>Title: My super title
-  Date: 2010-12-03 10:20
-  Category: Python
-  Tags: pelican, publishing
-  Slug: my-super-post
-  Author: Alexis Metaireau
-  Summary: Short version for index and feeds</p>
-<p>This is the content of my super blog post.</p>
+<p><code>Title: My super title</code></p>
+<p><code>Date: 2010-12-03 10:20</code></p>
+<p><code>Category: Python</code></p>
+<p><code>Tags: pelican, publishing</code></p>
+<p><code>Slug: my-super-post</code></p>
+<p><code>Author: Alexis Metaireau</code></p>
+<p><code>Summary: Short version for index and feeds</code></p>
+<p><code>This is the content of my super blog post.</code></p>
 </blockquote>
 <p>之後推出content目錄(即當前目錄為myblog)，執行</p>
 <blockquote>
