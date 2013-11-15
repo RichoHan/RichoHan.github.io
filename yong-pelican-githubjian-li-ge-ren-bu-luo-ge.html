@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>用Pelican + Github建立個人部落格</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Graph tags -->
+
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="用Pelican + Github建立個人部落格"/>
+            <meta property="og:url" content="/yong-pelican-githubjian-li-ge-ren-bu-luo-ge.html"/>
+            <meta property="og:description" content="Use pelican & github page to build personal blog"/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/theme/css/pygments.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+
+
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="" class="navbar-brand">Note for Richo</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/pelican.html">pelican</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/archives.html"><i class="icon-th-list"></i>Archives</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</nav>
+<!-- /.navbar -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/yong-pelican-githubjian-li-ge-ren-bu-luo-ge.html"
+                       rel="bookmark"
+                       title="Permalink to 用Pelican + Github建立個人部落格">
+                        用Pelican + Github建立個人部落格
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="icon-calendar"></i>Fri 15 November 2013
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/pelican.html">pelican</a>
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h3>安裝pelican</h3>
+<p>OS 介紹： OS X 10.9 Mavericks
+所需環境：請先裝好Python(2.7.X, 3.3+)、distribute、pip、virtualenv</p>
+<hr />
+<p>先到你想建立部落格的資料夾下建立虛擬環境</p>
+<blockquote>
+<p><code>virtualenv PelicanEnv --distribute</code></p>
+</blockquote>
+<p>啟動虛擬環境</p>
+<blockquote>
+<p><code>source PelicanEnv\bin\activate</code></p>
+</blockquote>
+<p>安裝Pelican</p>
+<blockquote>
+<p><code>pip install pelican</code></p>
+</blockquote>
+<p>想用Markdown寫文章的話，順便安裝Markdown</p>
+<blockquote>
+<p><code>pip install Markdown</code></p>
+</blockquote>
+<h3>建立Blog</h3>
+<p>先建立目錄</p>
+<blockquote>
+<p><code>mkdir myblog</code>
+`cd myblog'</p>
+</blockquote>
+<p>pelican 快速建立部落格指令</p>
+<blockquote>
+<p><code>pelican-quickstart</code></p>
+</blockquote>
+<p>此時會出現一堆要輸入的設定，我一開始也不懂，就都跟著default設定即可
+日後可以從pelicanconf.py裡面更改設定</p>
+<p>建立出來的目錄結構：</p>
+<blockquote>
+<p>myblog/
+├── content              # 存放输入的源文件
+│   └── (pages)          # 存放手工创建的静态页面
+├── output               # 生成的输出文件
+├── develop_server.sh    # 方便开启测试服务器
+├── Makefile             # 方便管理博客的Makefile
+├── pelicanconf.py       # 主配置文件
+└── publishconf.py       # 发布时使用的配置文件</p>
+</blockquote>
+<h3>撰寫文章</h3>
+<p>先進入content目錄資料夾，用Markdown語法寫如下文章，副檔名須為.mdown：</p>
+<blockquote>
+<p>Title: My super title
+  Date: 2010-12-03 10:20
+  Category: Python
+  Tags: pelican, publishing
+  Slug: my-super-post
+  Author: Alexis Metaireau
+  Summary: Short version for index and feeds</p>
+<p>This is the content of my super blog post.</p>
+</blockquote>
+<p>之後推出content目錄(即當前目錄為myblog)，執行</p>
+<blockquote>
+<p><code>make html</code></p>
+</blockquote>
+<p>此時ouput資料夾下就會根據你之前所有的變動生成對應的html檔。</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-lg-3 well well-sm" id="sidebar">
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="icon-home icon-large"></i>Social</h4></li>
+                    <li class="list-group-item"><a href="https://github.com/RichoHan"><i
+                            class="icon-Github-sign icon-large"></i>Github
+                    </a></li>
+
+
+
+            <li class="list-group-item"><a href="/tags.html"><h4><i class="icon-tags icon-large"></i>Tags</h4></a></li>
+                <li class="list-group-item tag-4">
+                    <a href="/tag/pelican.html">
+                        pelican
+                    </a>
+                </li>
+        </ul>
+    </section>
+</aside>        </div>
+    </div>
+</div>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+</body>
+</html>
