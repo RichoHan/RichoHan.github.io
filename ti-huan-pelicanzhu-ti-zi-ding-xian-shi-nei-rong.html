@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Note for Richo</title>
+    <title>替換Pelican主題＋自定顯示內容</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,10 +11,10 @@
 
     <!-- Open Graph tags -->
 
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="Note for Richo"/>
-            <meta property="og:url" content=""/>
-            <meta property="og:description" content="Note for Richo"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="替換Pelican主題＋自定顯示內容"/>
+            <meta property="og:url" content="/ti-huan-pelicanzhu-ti-zi-ding-xian-shi-nei-rong.html"/>
+            <meta property="og:description" content="Change pelican theme"/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
@@ -40,7 +40,7 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="/category/pelican.html">pelican</a>
                         </li>
             </ul>
@@ -55,20 +55,97 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-9">
-            <article>
-                <h2><a href="/ti-huan-pelicanzhu-ti-zi-ding-xian-shi-nei-rong.html">替換Pelican主題＋自定顯示內容</a></h2>
-                <div class="summary"><p>Change pelican theme</p>
-                    <a class="btn btn-default btn-xs" href="/ti-huan-pelicanzhu-ti-zi-ding-xian-shi-nei-rong.html">more ...</a>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/ti-huan-pelicanzhu-ti-zi-ding-xian-shi-nei-rong.html"
+                       rel="bookmark"
+                       title="Permalink to 替換Pelican主題＋自定顯示內容">
+                        替換Pelican主題＋自定顯示內容
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="icon-calendar"></i>Sat 16 November 2013
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/pelican.html">pelican</a>
+        /
+	<a href="/tag/bootstrap.html">bootstrap</a>
+</footer><!-- /.post-info -->                    </div>
                 </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/yong-pelican-github-pagejian-li-ge-ren-bu-luo-ge.html">用Pelican + Github Page建立個人部落格</a></h2>
-                <div class="summary"><p>Use pelican &amp; github page to build personal blog</p>
-                    <a class="btn btn-default btn-xs" href="/yong-pelican-github-pagejian-li-ge-ren-bu-luo-ge.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+                <h3>前言-為什麼我要替換Pelican主題</h3>
+<p>其實原本的主題也很好看了，<a href="https://github.com/getpelican/pelican-themes/tree/master/notmyidea-cms">見此頁</a><br />
+只是跟現在這個比起來，我更喜歡它的簡潔、清晰，且我日後要再加一些widget也不會太花=)<br />
+(還可以順便發一篇教學文XD)  </p>
+<hr />
+<h3>尋找適合的主題</h3>
+<p>大家可以到這個網站看pelican的相關布景主題<br />
+<a href="http://pelicanthemes.com">Pelican Themes</a><br />
+然後到它的<a href="https://github.com/getpelican/pelican-themes">Pelican Github repository</a>找到對應資料夾</p>
+<p>先到myblog建立「theme」目錄並複製資料夾，我用的是<a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">pelican-bootstrap3</a></p>
+<blockquote>
+<p><code>mkdir theme</code><br />
+<code>cd theme</code><br />
+<code>git clone https://github.com/DandyDev/pelican-bootstrap3.git</code>  </p>
+</blockquote>
+<h3>設定主題路徑</h3>
+<p>接著退出，編輯pelicanconf.py，加入：</p>
+<blockquote>
+<p><code>THEME = 'theme/pelican-bootstrap3'</code>  </p>
+</blockquote>
+<p>然後執行</p>
+<blockquote>
+<p><code>make html</code>  </p>
+</blockquote>
+<p>此時在進入output資料夾：</p>
+<blockquote>
+<p><code>git add .</code><br />
+<code>git commit -m "Edit theme"</code><br />
+<code>git push -u origin master</code>  </p>
+</blockquote>
+<p>再回去看你的網站，佈景應該已經變囉，那麼下次再來寫如何做特殊變更，或是大家可以看reference的usage，寫的都蠻清楚的=)  </p>
+<h3>Reference</h3>
+<p>+<a href="http://pelicanthemes.com">Pelican Themes</a><br />
++<a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">pelican-bootstrap3</a>  </p>
+            </div>
+            <!-- /.entry-content -->
+    <hr />
+    <!-- AddThis Button BEGIN -->
+    <!-- <div class="addthis_toolbox addthis_default_style">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    </div>
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5285f2764e3bc5a1"></script> -->
+
+    <!-- AddThis Smart Layers BEGIN -->
+    <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5285f2764e3bc5a1"></script>
+    <script type="text/javascript">
+        addthis.layers({
+            'theme' : 'transparent',
+            'share' : {
+              'position' : 'left',
+              'services' : 'facebook,twitter,google_plusone_share,more'
+              // 'numPreferredServices' : 5
+            }   
+        });
+    </script>
+    <!-- AddThis Smart Layers END -->
+    <!-- AddThis Button END -->
+        </article>
+    </section>
 
         </div>
         <div class="col-lg-3 well well-sm" id="sidebar">
