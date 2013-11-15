@@ -144,7 +144,7 @@
 </blockquote>
 <p>此時ouput資料夾下就會根據你之前所有的變動生成對應的html檔。</p>
 <h3>建立Github Page</h3>
-<p>先在自己的Github帳號之中，新建一個Repositiry
+<p>先在自己的Github帳號之中，新建一個Repositiry<br />
 Repositiry名字為「xxx.github.io」或「xxx.github.com」 <br />
 P.S.xxx要等於你的github帳號的username，我之前失敗就是卡在這</p>
 <p>創好之後到output目錄下，將生好的html檔push到github上</p>
@@ -156,7 +156,7 @@ P.S.xxx要等於你的github帳號的username，我之前失敗就是卡在這</
 <code>git remote add origin https://github.com/xxx/xxx.github.io.git</code><br />
 <code>git push -u origin master</code>  </p>
 </blockquote>
-<p>等一下之後到xxx.github.io應該就可以看到你剛剛建立的文章了！(灑花～)<br />
+<p>等一下之後，到xxx.github.io應該就可以看到你剛剛建立的文章了！(灑花～)<br />
 P.S.Push上去之後，會過幾分鐘才看到文章更新，這是正常現象。</p>
 <h3>Reference</h3>
 <p>+<a href="http://docs.getpelican.com/en/3.3.0/">Pelican官方網頁</a><br />
@@ -165,13 +165,13 @@ P.S.Push上去之後，會過幾分鐘才看到文章更新，這是正常現象
             <!-- /.entry-content -->
     <hr />
     <!-- AddThis Button BEGIN -->
-    <div class="addthis_toolbox addthis_default_style">
+    <!-- <div class="addthis_toolbox addthis_default_style">
         <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
         <a class="addthis_button_tweet"></a>
         <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
     </div>
     <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5285f2764e3bc5a1"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5285f2764e3bc5a1"></script> -->
 
     <!-- AddThis Smart Layers BEGIN -->
     <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
@@ -181,7 +181,8 @@ P.S.Push上去之後，會過幾分鐘才看到文章更新，這是正常現象
             'theme' : 'transparent',
             'share' : {
               'position' : 'left',
-              'numPreferredServices' : 5
+              'services' : 'facebook,twitter,google_plusone_share,more'
+              // 'numPreferredServices' : 5
             }   
         });
     </script>
