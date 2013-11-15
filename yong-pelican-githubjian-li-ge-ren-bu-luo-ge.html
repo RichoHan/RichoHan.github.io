@@ -79,6 +79,8 @@
 
 <span class="label label-default">Tags</span>
 	<a href="/tag/pelican.html">pelican</a>
+        /
+	<a href="/tag/github.html">github</a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <h3>安裝pelican</h3>
@@ -115,14 +117,14 @@
 日後可以從pelicanconf.py裡面更改設定</p>
 <p>建立出來的目錄結構：</p>
 <blockquote>
-<p><code>myblog/</code>
-<code>├── content              # 存放输入的源文件</code>
-<code>│   └── (pages)          # 存放手工创建的静态页面</code>
-<code>├── output               # 生成的输出文件</code>
-<code>├── develop_server.sh    # 方便开启测试服务器</code>
-<code>├── Makefile             # 方便管理博客的Makefile</code>
+<p><code>myblog/</code><br />
+<code>├── content              # 存放输入的源文件</code><br />
+<code>│   └── (pages)          # 存放手工创建的静态页面</code><br />
+<code>├── output               # 生成的输出文件</code><br />
+<code>├── develop_server.sh    # 方便开启测试服务器</code><br />
+<code>├── Makefile             # 方便管理博客的Makefile</code><br />
 <code>├── pelicanconf.py       # 主配置文件</code>
-<code>└── publishconf.py       # 发布时使用的配置文件</code></p>
+<code>└── publishconf.py       # 发布时使用的配置文件</code>  </p>
 </blockquote>
 <h3>撰寫文章</h3>
 <p>先進入content目錄資料夾，用Markdown語法寫如下文章，副檔名須為.mdown：</p>
@@ -154,7 +156,7 @@ P.S.xxx要等於你的github帳號的username，我之前失敗就是卡在這</
 <code>git remote add origin https://github.com/xxx/xxx.github.io.git</code><br />
 <code>git push -u origin master</code>  </p>
 </blockquote>
-<p>等一下之後到xxx.github.io應該就可以看到你剛剛建立的文章了！(灑花～)
+<p>等一下之後到xxx.github.io應該就可以看到你剛剛建立的文章了！(灑花～)<br />
 P.S.Push上去之後，會過幾分鐘才看到文章更新，這是正常現象。</p>
 <h3>Reference</h3>
 <p>+<a href="http://docs.getpelican.com/en/3.3.0/">Pelican官方網頁</a><br />
@@ -186,6 +188,11 @@ P.S.Push上去之後，會過幾分鐘才看到文章更新，這是正常現象
  -->
 
             <li class="list-group-item"><a href="/tags.html"><h4><i class="icon-tags icon-large"></i>Tags</h4></a></li>
+                <li class="list-group-item tag-4">
+                    <a href="/tag/github.html">
+                        github
+                    </a>
+                </li>
                 <li class="list-group-item tag-4">
                     <a href="/tag/pelican.html">
                         pelican
