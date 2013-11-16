@@ -69,7 +69,7 @@ div.tip p.admonition-title {
 div.attention p.admonition-title, div.caution p.admonition-title,
 div.danger p.admonition-title, div.error p.admonition-title,
 div.warning p.admonition-title, .code .error {
-  color: blue ;
+  color: red ;
   font-weight: bold ;
   font-family: sans-serif }
 
