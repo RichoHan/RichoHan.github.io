@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Note for Richo - github</title>
+    <title>MediaGoblin 佈署</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,10 +11,10 @@
 
     <!-- Open Graph tags -->
 
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="Note for Richo"/>
-            <meta property="og:url" content="http://RichoHan.github.com"/>
-            <meta property="og:description" content="Note for Richo"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="MediaGoblin 佈署"/>
+            <meta property="og:url" content="http://RichoHan.github.com/mediagoblin-bu-shu.html"/>
+            <meta property="og:description" content="MediaGoblin Setup"/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://RichoHan.github.com/theme/css/bootstrap.min.css" type="text/css"/>
@@ -52,7 +52,7 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="http://RichoHan.github.com/category/mediagoblin.html">MediaGoblin</a>
                         </li>
                         <li >
@@ -70,14 +70,102 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-9">
-            <article>
-                <h2><a href="http://RichoHan.github.com/yong-pelican-github-pagejian-li-ge-ren-bu-luo-ge.html">用Pelican + Github Page建立個人部落格</a></h2>
-                <div class="summary"><p>Use pelican &amp; github page to build personal blog</p>
-                    <a class="btn btn-default btn-xs" href="http://RichoHan.github.com/yong-pelican-github-pagejian-li-ge-ren-bu-luo-ge.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://RichoHan.github.com/mediagoblin-bu-shu.html"
+                       rel="bookmark"
+                       title="Permalink to MediaGoblin 佈署">
+                        MediaGoblin 佈署
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="icon-calendar"></i>Sat 30 November 2013
+    </span>
+    <span class="label label-default">By</span>
+    <a href="http://RichoHan.github.com/author/richo-han.html"><i class="icon-user"></i>Richo Han</a>
 
+    <span class="label label-default">Category</span>
+    <a href="http://RichoHan.github.com/category/mediagoblin.html">MediaGoblin</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://RichoHan.github.com/tag/mediagoblin.html">MediaGoblin</a>
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h3>前言</h3>
+<p>初始的佈署方式都被寫在mediagoblin.ini檔裏面，如果你要更動設定，建議先將mediagoblin.ini複製到mediagoblin_local.ini，再直接改寫mediagoblin_local.ini內的設定即可，預設就是如果有mediagoblin_local.ini就會優先去讀它。  </p>
+<hr />
+<h3>1.複製mediagoblin.ini至mediagoblin_local.ini</h3>
+<div class="highlight"><pre><span class="n">cp</span> <span class="n">mediagoblin</span><span class="p">.</span><span class="n">ini</span> <span class="n">mediagoblin_local</span><span class="p">.</span><span class="n">ini</span>
+</pre></div>
+
+
+<h3>2.常見更動</h3>
+<p>一開始由於email系統其實並沒有開啟，方便開發者測試帳號註冊，所以當使用者註冊完帳號之後，需要去點terminal的連結來開啟帳號服務，當我們想要開啟對外服務之後可以做以下更改：  </p>
+<div class="highlight"><pre><span class="n">email_debug_mode</span> <span class="o">=</span> <span class="nb">false</span>
+</pre></div>
+
+
+<p>然後針對系統自動發信地址做設定：  </p>
+<div class="highlight"><pre><span class="n">email_sender_address</span> <span class="o">=</span> <span class="o">&amp;</span><span class="err">#</span><span class="mf">34f</span><span class="n">oo</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span> <span class="err">#這部份看你的</span><span class="n">domain</span> <span class="n">name</span><span class="err">是什麼</span>
+</pre></div>
+
+
+<p>Reference:<a href="http://mediagoblin.readthedocs.org/en/v0.4.1/siteadmin/configuration.html">Configuration MediaGoblin</a></p>
+<hr />
+<p>paste.ini的更動方式如同mediagoblin.ini  </p>
+<h3>1.複製paste.ini至paste_local.ini</h3>
+<div class="highlight"><pre><span class="n">cp</span> <span class="n">paste</span><span class="p">.</span><span class="n">ini</span> <span class="n">paste_local</span><span class="p">.</span><span class="n">ini</span>
+</pre></div>
+
+
+<h3>2.如果想對外開啟服務，可能就不能只是在local端測試了，這時要該改ip和port設定</h3>
+<p>直接更改  </p>
+<div class="highlight"><pre><span class="p">[</span><span class="n">server</span><span class="o">:</span><span class="n">main</span><span class="p">]</span>  
+<span class="n">use</span> <span class="o">=</span> <span class="n">egg</span><span class="o">:</span><span class="n">Paste</span><span class="err">#</span><span class="n">http</span>  
+<span class="n">host</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="n">domain</span> <span class="o">||</span> <span class="n">ip</span>  
+<span class="n">port</span> <span class="o">=</span> <span class="n">port</span> <span class="n">number</span>
+</pre></div>
+
+
+<p>存檔之後重新跑server就可以對外服務了  </p>
+            </div>
+            <!-- /.entry-content -->
+    <hr />
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    </div>
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5285f2764e3bc5a1"></script>
+
+    <!-- AddThis Smart Layers BEGIN -->
+    <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5285f2764e3bc5a1"></script>
+    <script type="text/javascript">
+        addthis.layers({
+            'theme' : 'transparent',
+            'share' : {
+              'position' : 'left',
+              'services' : 'facebook,twitter,google_plusone_share,more'
+              // 'numPreferredServices' : 5
+            }   
+        });
+    </script>
+    <!-- AddThis Smart Layers END -->
+    <!-- AddThis Button END -->
+        </article>
+    </section>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -87,6 +175,7 @@
         ga('create', 'UA-45819207-1', 'richohan.github.io');
         ga('send', 'pageview');
     </script>
+
         </div>
         <div class="col-lg-3 well well-sm" id="sidebar">
 <aside>

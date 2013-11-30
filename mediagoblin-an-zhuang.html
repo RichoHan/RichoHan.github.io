@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>替換Pelican主題</title>
+    <title>MediaGoblin 安裝</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,9 +12,9 @@
     <!-- Open Graph tags -->
 
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="替換Pelican主題"/>
-            <meta property="og:url" content="http://RichoHan.github.com/ti-huan-pelicanzhu-ti.html"/>
-            <meta property="og:description" content="Change pelican theme"/>
+            <meta property="og:title" content="MediaGoblin 安裝"/>
+            <meta property="og:url" content="http://RichoHan.github.com/mediagoblin-an-zhuang.html"/>
+            <meta property="og:description" content="MediaGoblin Installation"/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://RichoHan.github.com/theme/css/bootstrap.min.css" type="text/css"/>
@@ -52,10 +52,10 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="http://RichoHan.github.com/category/mediagoblin.html">MediaGoblin</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="http://RichoHan.github.com/category/pelican.html">pelican</a>
                         </li>
             </ul>
@@ -74,10 +74,10 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://RichoHan.github.com/ti-huan-pelicanzhu-ti.html"
+                    <a href="http://RichoHan.github.com/mediagoblin-an-zhuang.html"
                        rel="bookmark"
-                       title="Permalink to 替換Pelican主題">
-                        替換Pelican主題
+                       title="Permalink to MediaGoblin 安裝">
+                        MediaGoblin 安裝
                     </a>
                 </h1>
             </header>
@@ -87,54 +87,102 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="icon-calendar"></i>Sat 16 November 2013
+        <i class="icon-calendar"></i>Sat 30 November 2013
     </span>
     <span class="label label-default">By</span>
-    <a href="http://RichoHan.github.com/author/richo.html"><i class="icon-user"></i>Richo</a>
+    <a href="http://RichoHan.github.com/author/richo-han.html"><i class="icon-user"></i>Richo Han</a>
 
     <span class="label label-default">Category</span>
-    <a href="http://RichoHan.github.com/category/pelican.html">pelican</a>
+    <a href="http://RichoHan.github.com/category/mediagoblin.html">MediaGoblin</a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://RichoHan.github.com/tag/pelican.html">pelican</a>
-        /
-	<a href="http://RichoHan.github.com/tag/bootstrap.html">bootstrap</a>
+	<a href="http://RichoHan.github.com/tag/mediagoblin.html">MediaGoblin</a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h3>前言-為什麼我要替換Pelican主題</h3>
-<p>其實原本的主題也很好看了，<a href="https://github.com/getpelican/pelican-themes/tree/master/notmyidea-cms">見此頁</a><br />
-只是跟現在這個比起來，我更喜歡它的簡潔、清晰，且我日後要再加一些widget也不會太花=)<br />
-(還可以順便發一篇教學文XD)  </p>
+                <h3>前言</h3>
+<p>基本上，這篇是屬於給開發者使用的deploy文件，想對MediaGoblin開發的人可能會比較有興趣。  </p>
 <hr />
-<h3>尋找適合的主題</h3>
-<p>大家可以到這個網站看pelican的相關布景主題：<a href="http://pelicanthemes.com">Pelican Themes</a><br />
-然後到它的<a href="https://github.com/getpelican/pelican-themes">Pelican Github repository</a>找到對應資料夾</p>
-<p>先到myblog建立「theme」目錄並複製資料夾，我用的是<a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">pelican-bootstrap3</a></p>
-<blockquote>
-<p><code>mkdir theme</code><br />
-<code>cd theme</code><br />
-<code>git clone https://github.com/DandyDev/pelican-bootstrap3.git</code>  </p>
-</blockquote>
-<h3>設定主題路徑</h3>
-<p>接著退出，編輯pelicanconf.py，加入：</p>
-<blockquote>
-<p><code>THEME = 'theme/pelican-bootstrap3'</code>  </p>
-</blockquote>
-<p>然後執行</p>
-<blockquote>
-<p><code>make html</code>  </p>
-</blockquote>
-<p>此時進入output資料夾，將變更後檔案push到github上：</p>
-<blockquote>
-<p><code>git add .</code><br />
-<code>git commit -m "Edit theme"</code><br />
-<code>git push -u origin master</code>  </p>
-</blockquote>
-<p>再回去看你的網站，佈景應該已經變囉，那麼下次再來寫如何做特殊變更，或是大家可以看reference的usage，寫的都蠻清楚的=)  </p>
-<h3>Reference</h3>
-<p>+<a href="http://pelicanthemes.com">Pelican Themes</a><br />
-+<a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">pelican-bootstrap3</a>  </p>
+<h3>0.安裝環境</h3>
+<p>Ubuntu 13.04(12.04經測試也沒問題)<br />
+其他環境如Mac OSX、Windows等，詳見官方網站<a href="http://wiki.mediagoblin.org/HackingHowto">Hacking Howto</a></p>
+<h3>1.安裝必要套件</h3>
+<p>所需套件如下：
+Python 2.6 or 2.7 - http://www.python.org/ (You will need Python as well as the dev files for building modules.)<br />
+python-lxml - http://lxml.de/<br />
+git - http://git-scm.com/<br />
+SQLAlchemy 0.7.0 or higher - http://www.sqlalchemy.org/<br />
+Python Imaging Library (PIL) - http://www.pythonware.com/products/pil/<br />
+virtualenv - http://www.virtualenv.org/<br />
+Python GStreamer Bindings - http://gstreamer.freedesktop.org/modules/gst-python.html  </p>
+<p>安裝指令：</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">git</span><span class="o">-</span><span class="n">core</span> <span class="n">python</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span> <span class="n">python</span><span class="o">-</span><span class="n">lxml</span> <span class="n">python</span><span class="o">-</span><span class="n">imaging</span> <span class="n">python</span><span class="o">-</span><span class="n">virtualenv</span> <span class="n">python</span><span class="o">-</span><span class="n">gst0</span><span class="mf">.10</span> <span class="n">libjpeg8</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+
+
+<h3>2.建立開發環境</h3>
+<p>1.複製專案  </p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">:</span><span class="c1">//gitorious.org/mediagoblin/mediagoblin.git</span>
+</pre></div>
+
+
+<p>2.進到mediagoblin資料夾內  </p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="n">mediagoblin</span>
+</pre></div>
+
+
+<p>3.子模組設定更新  </p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">submodule</span> <span class="n">init</span>  
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span>
+</pre></div>
+
+
+<h3>3.Virtual environment 設定</h3>
+<p>用virtualenv新增一個virtual environment  </p>
+<div class="highlight"><pre><span class="p">(</span><span class="n">virtualenv</span> <span class="o">--</span><span class="n">system</span><span class="o">-</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="p">.</span> <span class="o">||</span> <span class="n">virtualenv</span> <span class="p">.)</span>
+</pre></div>
+
+
+<p>註：每個人環境不一樣，可能各種方式都要嘗試一下，像是--setuptools, --distribute，如果你的系統是跑python3.X，試試--python=python2.7 或 --python=python2.6  </p>
+<h3>4.跑安裝腳本</h3>
+<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">develop</span>
+</pre></div>
+
+
+<h3>5.初始化資料庫</h3>
+<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">gmg</span> <span class="n">dbupdate</span>
+</pre></div>
+
+
+<h3>6.軟體測試</h3>
+<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">runtests</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+
+
+<p>到目前為止如果都沒有出錯，基本上你的MediaGoblin Instance已經沒有問題囉  </p>
+<h3>7.簡易啟動服務</h3>
+<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">lazyserver</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+
+
+<p>或  </p>
+<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">lazyserver</span><span class="p">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">server</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="n">broadcast</span>
+</pre></div>
+
+
+<p>看到lazy就知道這是懶人作法，他會同時跑celery &amp; server  </p>
+<h3>8.如果你想將celery分開來，或有其他原因，你可以這樣做</h3>
+<p>Running the server-  </p>
+<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">paster</span> <span class="n">serve</span> <span class="n">paste</span><span class="p">.</span><span class="n">ini</span> <span class="o">--</span><span class="n">reload</span>
+</pre></div>
+
+
+<p>Running celeryd-  </p>
+<div class="highlight"><pre><span class="n">CELERY_CONFIG_MODULE</span><span class="o">=</span><span class="n">mediagoblin</span><span class="p">.</span><span class="n">init</span><span class="p">.</span><span class="n">celery</span><span class="p">.</span><span class="n">from_celery</span> <span class="p">.</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">celeryd</span>
+</pre></div>
+
+
+<p>這時開啟瀏覽器前往http://127.0.0.1:6543，成功的話應該會出現以下頁面  </p>
             </div>
             <!-- /.entry-content -->
     <hr />
