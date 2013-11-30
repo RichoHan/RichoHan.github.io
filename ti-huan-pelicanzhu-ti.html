@@ -56,7 +56,7 @@
                             <a href="http://RichoHan.github.com/category/mediagoblin.html">MediaGoblin</a>
                         </li>
                         <li class="active">
-                            <a href="http://RichoHan.github.com/category/pelican.html">pelican</a>
+                            <a href="http://RichoHan.github.com/category/pelican.html">Pelican</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -93,7 +93,7 @@
     <a href="http://RichoHan.github.com/author/richo.html"><i class="icon-user"></i>Richo</a>
 
     <span class="label label-default">Category</span>
-    <a href="http://RichoHan.github.com/category/pelican.html">pelican</a>
+    <a href="http://RichoHan.github.com/category/pelican.html">Pelican</a>
 
 
 <span class="label label-default">Tags</span>
@@ -109,28 +109,32 @@
 <hr />
 <h3>尋找適合的主題</h3>
 <p>大家可以到這個網站看pelican的相關布景主題：<a href="http://pelicanthemes.com">Pelican Themes</a><br />
-然後到它的<a href="https://github.com/getpelican/pelican-themes">Pelican Github repository</a>找到對應資料夾</p>
-<p>先到myblog建立「theme」目錄並複製資料夾，我用的是<a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">pelican-bootstrap3</a></p>
-<blockquote>
-<p><code>mkdir theme</code><br />
-<code>cd theme</code><br />
-<code>git clone https://github.com/DandyDev/pelican-bootstrap3.git</code>  </p>
-</blockquote>
+然後到它的<a href="https://github.com/getpelican/pelican-themes">Pelican Github repository</a>找到對應資料夾  </p>
+<p>先到myblog建立「theme」目錄並複製資料夾，我用的是<a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">pelican-bootstrap3</a>  </p>
+<div class="highlight"><pre><span class="n">mkdir</span> <span class="n">theme</span>  
+<span class="n">cd</span> <span class="n">theme</span>  
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/DandyDev/pelican-bootstrap3.git</span>
+</pre></div>
+
+
 <h3>設定主題路徑</h3>
-<p>接著退出，編輯pelicanconf.py，加入：</p>
-<blockquote>
-<p><code>THEME = 'theme/pelican-bootstrap3'</code>  </p>
-</blockquote>
-<p>然後執行</p>
-<blockquote>
-<p><code>make html</code>  </p>
-</blockquote>
-<p>此時進入output資料夾，將變更後檔案push到github上：</p>
-<blockquote>
-<p><code>git add .</code><br />
-<code>git commit -m "Edit theme"</code><br />
-<code>git push -u origin master</code>  </p>
-</blockquote>
+<p>接著退出，編輯pelicanconf.py，加入：  </p>
+<div class="highlight"><pre><span class="n">THEME</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">theme</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">bootstrap3</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<p>然後執行  </p>
+<div class="highlight"><pre><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+
+
+<p>此時進入output資料夾，將變更後檔案push到github上：  </p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">add</span> <span class="p">.</span>  
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;Edit theme&quot;</span>  
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">master</span>
+</pre></div>
+
+
 <p>再回去看你的網站，佈景應該已經變囉，那麼下次再來寫如何做特殊變更，或是大家可以看reference的usage，寫的都蠻清楚的=)  </p>
 <h3>Reference</h3>
 <p>+<a href="http://pelicanthemes.com">Pelican Themes</a><br />
@@ -187,7 +191,7 @@
                 </li>
                 <li class="list-group-item">
                     <a href="http://RichoHan.github.com/category/pelican.html">
-                        <i class="icon-folder-open icon-large"></i>pelican
+                        <i class="icon-folder-open icon-large"></i>Pelican
                     </a>
                 </li>
             
