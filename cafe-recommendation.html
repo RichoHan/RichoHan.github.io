@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>MediaGoblin 安裝</title>
+    <title>Cafe Recommendation</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,9 +12,9 @@
     <!-- Open Graph tags -->
 
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="MediaGoblin 安裝"/>
-            <meta property="og:url" content="http://RichoHan.github.com/mediagoblin-an-zhuang.html"/>
-            <meta property="og:description" content="MediaGoblin Installation"/>
+            <meta property="og:title" content="Cafe Recommendation"/>
+            <meta property="og:url" content="http://RichoHan.github.com/cafe-recommendation.html"/>
+            <meta property="og:description" content="A map for cafe located at where I lived."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://RichoHan.github.com/theme/css/bootstrap.min.css" type="text/css"/>
@@ -80,10 +80,10 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://RichoHan.github.com/mediagoblin-an-zhuang.html"
+                    <a href="http://RichoHan.github.com/cafe-recommendation.html"
                        rel="bookmark"
-                       title="Permalink to MediaGoblin 安裝">
-                        MediaGoblin 安裝
+                       title="Permalink to Cafe Recommendation">
+                        Cafe Recommendation
                     </a>
                 </h1>
             </header>
@@ -93,7 +93,7 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="icon-calendar"></i>Sat 30 November 2013
+        <i class="icon-calendar"></i>Sat 01 March 2014
     </span>
     <span class="label label-default">By</span>
     <a href="http://RichoHan.github.com/author/richo.html"><i class="icon-user"></i>Richo</a>
@@ -103,92 +103,71 @@
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://RichoHan.github.com/tag/mediagoblin.html">MediaGoblin</a>
+	<a href="http://RichoHan.github.com/tag/cafe.html">Cafe</a>
+        /
+	<a href="http://RichoHan.github.com/tag/map.html">Map</a>
+        /
+	<a href="http://RichoHan.github.com/tag/recommendation.html">Recommendation</a>
+        /
+	<a href="http://RichoHan.github.com/tag/food.html">Food</a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <h3>前言</h3>
-<p>基本上，這篇是屬於給開發者使用的deploy文件，想對MediaGoblin開發的人可能會比較有興趣。  </p>
-<hr />
-<h3>0.安裝環境</h3>
-<p>Ubuntu 13.04(12.04經測試也沒問題)<br />
-其他環境如Mac OSX、Windows等，詳見官方網站<a href="http://wiki.mediagoblin.org/HackingHowto">Hacking Howto</a></p>
-<h3>1.安裝必要套件</h3>
-<p>所需套件如下：
-Python 2.6 or 2.7 - http://www.python.org/ (You will need Python as well as the dev files for building modules.)<br />
-python-lxml - http://lxml.de/<br />
-git - http://git-scm.com/<br />
-SQLAlchemy 0.7.0 or higher - http://www.sqlalchemy.org/<br />
-Python Imaging Library (PIL) - http://www.pythonware.com/products/pil/<br />
-virtualenv - http://www.virtualenv.org/<br />
-Python GStreamer Bindings - http://gstreamer.freedesktop.org/modules/gst-python.html  </p>
-<p>安裝指令：</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">git</span><span class="o">-</span><span class="n">core</span> <span class="n">python</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span> <span class="n">python</span><span class="o">-</span><span class="n">lxml</span> <span class="n">python</span><span class="o">-</span><span class="n">imaging</span> <span class="n">python</span><span class="o">-</span><span class="n">virtualenv</span> <span class="n">python</span><span class="o">-</span><span class="n">gst0</span><span class="mf">.10</span> <span class="n">libjpeg8</span><span class="o">-</span><span class="n">dev</span>
-</pre></div>
-
-
-<h3>2.建立開發環境</h3>
-<p>1.複製專案  </p>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">:</span><span class="c1">//gitorious.org/mediagoblin/mediagoblin.git</span>
-</pre></div>
-
-
-<p>2.進到mediagoblin資料夾內  </p>
-<div class="highlight"><pre><span class="n">cd</span> <span class="n">mediagoblin</span>
-</pre></div>
-
-
-<p>3.子模組設定更新  </p>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">submodule</span> <span class="n">init</span>  
-<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span>
-</pre></div>
-
-
-<h3>3.Virtual environment 設定</h3>
-<p>用virtualenv新增一個virtual environment  </p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">virtualenv</span> <span class="o">--</span><span class="n">system</span><span class="o">-</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="p">.</span> <span class="o">||</span> <span class="n">virtualenv</span> <span class="p">.)</span>
-</pre></div>
-
-
-<p>註：每個人環境不一樣，可能各種方式都要嘗試一下，像是--setuptools, --distribute，如果你的系統是跑python3.X，試試--python=python2.7 或 --python=python2.6  </p>
-<h3>4.跑安裝腳本</h3>
-<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">develop</span>
-</pre></div>
-
-
-<h3>5.初始化資料庫</h3>
-<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">gmg</span> <span class="n">dbupdate</span>
-</pre></div>
-
-
-<h3>6.軟體測試</h3>
-<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">runtests</span><span class="p">.</span><span class="n">sh</span>
-</pre></div>
-
-
-<p>到目前為止如果都沒有出錯，基本上你的MediaGoblin Instance已經沒有問題囉  </p>
-<h3>7.簡易啟動服務</h3>
-<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">lazyserver</span><span class="p">.</span><span class="n">sh</span>
-</pre></div>
-
-
-<p>或  </p>
-<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">lazyserver</span><span class="p">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">server</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="n">broadcast</span>
-</pre></div>
-
-
-<p>看到lazy就知道這是懶人作法，他會同時跑celery &amp; server  </p>
-<h3>8.如果你想將celery分開來，或有其他原因，你可以這樣做</h3>
-<p>Running the server-  </p>
-<div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">paster</span> <span class="n">serve</span> <span class="n">paste</span><span class="p">.</span><span class="n">ini</span> <span class="o">--</span><span class="n">reload</span>
-</pre></div>
-
-
-<p>Running celeryd-  </p>
-<div class="highlight"><pre><span class="n">CELERY_CONFIG_MODULE</span><span class="o">=</span><span class="n">mediagoblin</span><span class="p">.</span><span class="n">init</span><span class="p">.</span><span class="n">celery</span><span class="p">.</span><span class="n">from_celery</span> <span class="p">.</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">celeryd</span>
-</pre></div>
-
-
-<p>這時開啟瀏覽器前往http://127.0.0.1:6543，成功的話應該會出現以下頁面  </p>
+<p>記錄之前去過的咖啡廳集點過的餐點以便之後查詢=)  </p>
+<h3>評分方式</h3>
+<p>C for chat: 適不適合聊天聚餐<br />
+P for Papers:  適不適合待在那邊看paper, coding<br />
+C/P 性價比:  個人主觀給分XD  </p>
+<h3>台北 Taipei</h3>
+<p>路燈咖啡<br />
+C：★★★★☆<br />
+P：★☆☆☆☆<br />
+C/P：★★★☆☆<br />
+Wifi：有<br />
+P.S.人多會請讓座位<br />
+地址：台北市中正區羅斯福路三段244巷10弄19號<br />
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3615.5290176935214!2d121.531526!3d25.016115!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a98b8638f9ab%3A0x15959d67ac82f6b0!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A576F5pav56aP6Lev5LiJ5q61MjQ05be3MTDlvIQxOeiZnw!5e0!3m2!1szh-TW!2stw!4v1393682006574" width="400" height="300" frameborder="0" style="border:0"></iframe>  </p>
+<p>Market Place 市集<br />
+C：★★★★☆<br />
+P：★☆☆☆☆<br />
+C/P：★★☆☆☆<br />
+Wifi：有<br />
+地址：台北市中正區重慶南路一段1號2樓<br />
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.6223246764903!2d121.513386!3d25.046888000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a90d2569751f%3A0x13f004b35c037895!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A6YeN5oW25Y2X6Lev5LiA5q61MeiZnw!5e0!3m2!1szh-TW!2stw!4v1393681869681" width="400" height="300" frameborder="0" style="border:0"></iframe>  </p>
+<h3>新竹 Hsinchu</h3>
+<p>舊式經典<br />
+C：★★★★☆<br />
+P：★★★☆☆<br />
+C/P：★★★☆☆<br />
+Wifi：有<br />
+地址：新竹市東區建美路5號<br />
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d905.4567212289267!2d120.99739443981397!3d24.80138070578696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346836721fea591b%3A0xb4849e27fe0f6b0e!2zMzAw5paw56u55biC5p2x5Y2A5bu6576O6Lev!5e0!3m2!1szh-TW!2stw!4v1393680712876" width="400" height="300" frameborder="0" style="border:0"></iframe>  </p>
+<p>鮭魚咖啡<br />
+C：★★★★☆<br />
+P：★☆☆☆☆<br />
+C/P：★★☆☆☆<br />
+Wifi：？<br />
+地址：新竹市北區勝利路312號<br />
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3621.7985710569606!2d120.96370199999998!3d24.80235!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346835953ba1d3f7%3A0xbc2df50c41a7683f!2zMzAw5paw56u55biC5YyX5Y2A5Yud5Yip6LevMzEy6Jmf!5e0!3m2!1szh-TW!2stw!4v1393681621792" width="400" height="300" frameborder="0" style="border:0"></iframe>  </p>
+<p>馬雅咖啡<br />
+C：★★☆☆☆<br />
+P：★★★☆☆<br />
+C/P：★★☆☆☆<br />
+Wifi：有<br />
+地址：新竹市北區中正路485巷4號<br />
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3621.4067478724646!2d120.9581!3d24.815759999999997!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346835ba0f320c2d%3A0x36ce18485113878e!2zMzAw5paw56u55biC5YyX5Y2A5Lit5q2j6LevNDg15be3NOiZnw!5e0!3m2!1szh-TW!2stw!4v1393681682501" width="400" height="300" frameborder="0" style="border:0"></iframe>  </p>
+<h3>台南 Tainan</h3>
+<p>Room A<br />
+C：★★★★☆<br />
+P：★★★★☆<br />
+C/P：★★☆☆☆<br />
+Wifi：有<br />
+P.S.以時計費，顯得有點貴，不過空間大，相對起來環境舒適，去兩次都不太吵雜<br />
+地址：台南市南區西門路一段607號3樓<br />
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3673.0482267752086!2d120.19738399999999!3d22.985253999999998!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e76796cd16c95%3A0x1b78fbf024320865!2zNzAy5Y-w5Y2X5biC5Y2X5Y2A6KW_6ZaA6Lev5LiA5q61NjA36Jmf!5e0!3m2!1szh-TW!2stw!4v1393681500681" width="400" height="300" frameborder="0" style="border:0"></iframe>  </p>
+<h3>未去清單</h3>
+<p>+<a href="http://blog.roodo.com/kayu/archives/25422850.html">在樹上</a><br />
++<a href="https://plus.google.com/116499515700939114510/about?gl=tw&amp;hl=zh-TW">布蕾咖啡</a>  </p>
             </div>
             <!-- /.entry-content -->
     <hr />
