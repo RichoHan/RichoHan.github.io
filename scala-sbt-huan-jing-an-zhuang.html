@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Note for Richo - Food</title>
+    <title>Scala - sbt 環境安裝</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,10 +11,10 @@
 
     <!-- Open Graph tags -->
 
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="Note for Richo"/>
-            <meta property="og:url" content="http://RichoHan.github.com"/>
-            <meta property="og:description" content="Note for Richo"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Scala - sbt 環境安裝"/>
+            <meta property="og:url" content="http://RichoHan.github.com/scala-sbt-huan-jing-an-zhuang.html"/>
+            <meta property="og:description" content="Scala - sbt environment setup"/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://RichoHan.github.com/theme/css/bootstrap.min.css" type="text/css"/>
@@ -67,7 +67,7 @@
                         <li >
                             <a href="http://RichoHan.github.com/category/pelican.html">Pelican</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://RichoHan.github.com/category/scala.html">Scala</a>
                         </li>
             </ul>
@@ -82,14 +82,107 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-9">
-            <article>
-                <h2><a href="http://RichoHan.github.com/cafe-recommendation.html">Cafe Recommendation</a></h2>
-                <div class="summary"><p>A map for cafe located at where I lived.</p>
-                    <a class="btn btn-default btn-xs" href="http://RichoHan.github.com/cafe-recommendation.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://RichoHan.github.com/scala-sbt-huan-jing-an-zhuang.html"
+                       rel="bookmark"
+                       title="Permalink to Scala - sbt 環境安裝">
+                        Scala - sbt 環境安裝
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="icon-calendar"></i>Tue 25 March 2014
+    </span>
+    <span class="label label-default">By</span>
+    <a href="http://RichoHan.github.com/author/richo.html"><i class="icon-user"></i>Richo</a>
 
+    <span class="label label-default">Category</span>
+    <a href="http://RichoHan.github.com/category/scala.html">Scala</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://RichoHan.github.com/tag/scala.html">Scala</a>
+        /
+	<a href="http://RichoHan.github.com/tag/sbt.html">sbt</a>
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h3>前言</h3>
+<p>OS 介紹： OS X 10.9 Mavericks<br />
+為了Functional programming安裝sbt, 一開始蠢蠢的看不懂安裝方式，切記勿用homebrew或mac port安裝，版本沒有更新，執行會報錯  </p>
+<h3>安裝</h3>
+<p>先從<a href="http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html#">官方網頁</a>下載sbt-launch.jar<br />
+將sbt-launch.jar移到/usr/local/bin  </p>
+<div class="highlight"><pre><span class="n">mv</span> <span class="n">sbt</span><span class="o">-</span><span class="n">launch</span><span class="p">.</span><span class="n">jar</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span>
+</pre></div>
+
+
+<p>撰寫sbt shell script  </p>
+<div class="highlight"><pre><span class="n">vi</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sbt</span>
+</pre></div>
+
+
+<p>內容如下：  </p>
+<div class="highlight"><pre><span class="n">SBT_OPTS</span><span class="o">=</span><span class="s">&quot;-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M&quot;</span>  
+<span class="n">java</span> <span class="err">$</span><span class="n">SBT_OPTS</span> <span class="o">-</span><span class="n">jar</span> <span class="err">`</span><span class="n">dirname</span> <span class="err">$</span><span class="mi">0</span><span class="err">`</span><span class="o">/</span><span class="n">sbt</span><span class="o">-</span><span class="n">launch</span><span class="p">.</span><span class="n">jar</span> <span class="s">&quot;$@&quot;</span>
+</pre></div>
+
+
+<p>換一下權限  </p>
+<div class="highlight"><pre><span class="n">chmod</span> <span class="n">u</span><span class="o">+</span><span class="n">x</span> <span class="o">~/</span><span class="n">bin</span><span class="o">/</span><span class="n">sbt</span>
+</pre></div>
+
+
+<p>重開terminal，看一下是否建立好路徑  </p>
+<div class="highlight"><pre><span class="n">which</span> <span class="n">sbt</span>
+</pre></div>
+
+
+<p>應該會出現</p>
+<div class="highlight"><pre><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sbt</span>
+</pre></div>
+
+
+<p>接著直接跑sbt即可使用^^</p>
+<hr />
+<h3>Reference</h3>
+<p>+<a href="http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html">sbt setup</a></p>
+            </div>
+            <!-- /.entry-content -->
+    <hr />
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    </div>
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5285f2764e3bc5a1"></script>
+
+    <!-- AddThis Smart Layers BEGIN -->
+    <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5285f2764e3bc5a1"></script>
+    <script type="text/javascript">
+        addthis.layers({
+            'theme' : 'transparent',
+            'share' : {
+              'position' : 'left',
+              'services' : 'facebook,twitter,google_plusone_share,more'
+              // 'numPreferredServices' : 5
+            }   
+        });
+    </script>
+    <!-- AddThis Smart Layers END -->
+    <!-- AddThis Button END -->
+        </article>
+    </section>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -99,6 +192,7 @@
         ga('create', 'UA-45819207-1', 'richohan.github.io');
         ga('send', 'pageview');
     </script>
+
         </div>
         <div class="col-lg-3 well well-sm" id="sidebar">
 <aside>
