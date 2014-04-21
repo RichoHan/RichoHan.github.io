@@ -124,6 +124,22 @@
                 <script src="vis/dist/vis.js"></script>
 
 <p><link href="vis/dist/vis.css" rel="stylesheet" type="text/css" /></p>
+<div id="visualization"></div>
+
+<script type="text/javascript">
+  var container = document.getElementById('visualization');
+  var data = [
+    {id: 1, content: 'item 1', start: '2013-04-20'},
+    {id: 2, content: 'item 2', start: '2013-04-14'},
+    {id: 3, content: 'item 3', start: '2013-04-18'},
+    {id: 4, content: 'item 4', start: '2013-04-16', end: '2013-04-19'},
+    {id: 5, content: 'item 5', start: '2013-04-25'},
+    {id: 6, content: 'item 6', start: '2013-04-27'}
+  ];
+  var options = {};
+  var timeline = new vis.Timeline(container, data, options);
+</script>
+
 <h3>Reference</h3>
 <p>+<a href="http://visjs.org/">vis.js</a></p>
             </div>
@@ -226,28 +242,13 @@
                     </a>
                 </li>
                 <li class="list-group-item tag-1">
-                    <a href="http://RichoHan.github.com/tag/pelican.html">
-                        Pelican
-                    </a>
-                </li>
-                <li class="list-group-item tag-1">
                     <a href="http://RichoHan.github.com/tag/mediagoblin.html">
                         MediaGoblin
                     </a>
                 </li>
-                <li class="list-group-item tag-2">
-                    <a href="http://RichoHan.github.com/tag/hci.html">
-                        HCI
-                    </a>
-                </li>
-                <li class="list-group-item tag-2">
-                    <a href="http://RichoHan.github.com/tag/os-x.html">
-                        OS X
-                    </a>
-                </li>
-                <li class="list-group-item tag-2">
-                    <a href="http://RichoHan.github.com/tag/python.html">
-                        Python
+                <li class="list-group-item tag-1">
+                    <a href="http://RichoHan.github.com/tag/pelican.html">
+                        Pelican
                     </a>
                 </li>
                 <li class="list-group-item tag-2">
@@ -260,29 +261,19 @@
                         Javascript
                     </a>
                 </li>
-                <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/mysql.html">
-                        MySQL
+                <li class="list-group-item tag-2">
+                    <a href="http://RichoHan.github.com/tag/python.html">
+                        Python
                     </a>
                 </li>
-                <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/map.html">
-                        Map
+                <li class="list-group-item tag-2">
+                    <a href="http://RichoHan.github.com/tag/hci.html">
+                        HCI
                     </a>
                 </li>
-                <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/git.html">
-                        Git
-                    </a>
-                </li>
-                <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/bashrc.html">
-                        bashrc
-                    </a>
-                </li>
-                <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/data-visualization.html">
-                        Data Visualization
+                <li class="list-group-item tag-2">
+                    <a href="http://RichoHan.github.com/tag/os-x.html">
+                        OS X
                     </a>
                 </li>
                 <li class="list-group-item tag-4">
@@ -291,8 +282,18 @@
                     </a>
                 </li>
                 <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/social-network-analysis.html">
-                        Social Network Analysis
+                    <a href="http://RichoHan.github.com/tag/math.html">
+                        math
+                    </a>
+                </li>
+                <li class="list-group-item tag-4">
+                    <a href="http://RichoHan.github.com/tag/food.html">
+                        Food
+                    </a>
+                </li>
+                <li class="list-group-item tag-4">
+                    <a href="http://RichoHan.github.com/tag/prototyping.html">
+                        prototyping
                     </a>
                 </li>
                 <li class="list-group-item tag-4">
@@ -301,8 +302,8 @@
                     </a>
                 </li>
                 <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/github.html">
-                        github
+                    <a href="http://RichoHan.github.com/tag/logic.html">
+                        logic
                     </a>
                 </li>
                 <li class="list-group-item tag-4">
@@ -316,18 +317,13 @@
                     </a>
                 </li>
                 <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/scala.html">
-                        Scala
-                    </a>
-                </li>
-                <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/food.html">
-                        Food
-                    </a>
-                </li>
-                <li class="list-group-item tag-4">
                     <a href="http://RichoHan.github.com/tag/south.html">
                         South
+                    </a>
+                </li>
+                <li class="list-group-item tag-4">
+                    <a href="http://RichoHan.github.com/tag/github.html">
+                        github
                     </a>
                 </li>
                 <li class="list-group-item tag-4">
@@ -336,8 +332,23 @@
                     </a>
                 </li>
                 <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/logic.html">
-                        logic
+                    <a href="http://RichoHan.github.com/tag/bashrc.html">
+                        bashrc
+                    </a>
+                </li>
+                <li class="list-group-item tag-4">
+                    <a href="http://RichoHan.github.com/tag/data-visualization.html">
+                        Data Visualization
+                    </a>
+                </li>
+                <li class="list-group-item tag-4">
+                    <a href="http://RichoHan.github.com/tag/git.html">
+                        Git
+                    </a>
+                </li>
+                <li class="list-group-item tag-4">
+                    <a href="http://RichoHan.github.com/tag/map.html">
+                        Map
                     </a>
                 </li>
                 <li class="list-group-item tag-4">
@@ -346,18 +357,23 @@
                     </a>
                 </li>
                 <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/math.html">
-                        math
-                    </a>
-                </li>
-                <li class="list-group-item tag-4">
-                    <a href="http://RichoHan.github.com/tag/prototyping.html">
-                        prototyping
-                    </a>
-                </li>
-                <li class="list-group-item tag-4">
                     <a href="http://RichoHan.github.com/tag/bootstrap.html">
                         bootstrap
+                    </a>
+                </li>
+                <li class="list-group-item tag-4">
+                    <a href="http://RichoHan.github.com/tag/scala.html">
+                        Scala
+                    </a>
+                </li>
+                <li class="list-group-item tag-4">
+                    <a href="http://RichoHan.github.com/tag/social-network-analysis.html">
+                        Social Network Analysis
+                    </a>
+                </li>
+                <li class="list-group-item tag-4">
+                    <a href="http://RichoHan.github.com/tag/mysql.html">
+                        MySQL
                     </a>
                 </li>
         </ul>
