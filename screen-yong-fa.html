@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Note for Richo - logic</title>
+    <title>screen 用法</title>
     <link rel="shortcut icon" href="http://RichoHan.github.com/theme/image/network2.png">
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,10 +12,10 @@
 
     <!-- Open Graph tags -->
 
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="Note for Richo"/>
-            <meta property="og:url" content="http://RichoHan.github.com"/>
-            <meta property="og:description" content="Note for Richo"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="screen 用法"/>
+            <meta property="og:url" content="http://RichoHan.github.com/screen-yong-fa.html"/>
+            <meta property="og:description" content="Using screen to run process in background"/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://RichoHan.github.com/theme/css/bootstrap.min.css" type="text/css"/>
@@ -62,7 +62,7 @@
                         <li >
                             <a href="http://RichoHan.github.com/category/os-x.html">OS X</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://RichoHan.github.com/category/others.html">Others</a>
                         </li>
                         <li >
@@ -83,14 +83,108 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-9">
-            <article>
-                <h2><a href="http://RichoHan.github.com/zheng-ming-112.html">證明1+1=2</a></h2>
-                <div class="summary"><p>Prove that one plus one equals to two</p>
-                    <a class="btn btn-default btn-xs" href="http://RichoHan.github.com/zheng-ming-112.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://RichoHan.github.com/screen-yong-fa.html"
+                       rel="bookmark"
+                       title="Permalink to screen 用法">
+                        screen 用法
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="icon-calendar"></i>Tue 20 May 2014
+    </span>
+    <span class="label label-default">By</span>
+    <a href="http://RichoHan.github.com/author/richo.html"><i class="icon-user"></i>Richo</a>
 
+    <span class="label label-default">Category</span>
+    <a href="http://RichoHan.github.com/category/others.html">Others</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://RichoHan.github.com/tag/unix.html">Unix</a>
+        /
+	<a href="http://RichoHan.github.com/tag/screen.html">screen</a>
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h3>前言</h3>
+<p>發現比nohup更好用的背景執行工具了0.0  </p>
+<hr />
+<h3>Using nohup</h3>
+<p>執行方式  </p>
+<div class="highlight"><pre><span class="cp"># 在terminal輸入  </span>
+<span class="n">screen</span>  <span class="o">&lt;==</span><span class="err">執行後會跳至新視窗</span>
+</pre></div>
+
+
+<h3>Hotkeys</h3>
+<div class="highlight"><pre><span class="cp"># 新增screen  </span>
+<span class="n">CTRL</span><span class="o">+</span><span class="n">a</span><span class="p">,</span><span class="n">c</span>  
+<span class="cp"># 切換至下個screen  </span>
+<span class="n">CTRL</span><span class="o">+</span><span class="n">a</span><span class="p">,</span><span class="n">n</span>  
+<span class="cp"># 切換至前一個screen  </span>
+<span class="n">CTRL</span><span class="o">+</span><span class="n">a</span><span class="p">,</span><span class="n">a</span>  
+<span class="cp"># 查看目前有幾個screen  </span>
+<span class="n">CTRL</span><span class="o">+</span><span class="n">a</span><span class="p">,</span><span class="n">w</span>  
+<span class="cp"># 離開screen  </span>
+<span class="n">CTRL</span><span class="o">+</span><span class="n">a</span><span class="p">,</span><span class="n">d</span>  
+<span class="cp"># 刪除screen  </span>
+<span class="n">exit</span>  
+<span class="n">or</span>  
+<span class="n">CTRL</span><span class="o">+</span><span class="n">a</span><span class="p">,</span><span class="n">k</span>
+</pre></div>
+
+
+<h3>查看目前screen status</h3>
+<div class="highlight"><pre><span class="n">screen</span> <span class="o">-</span><span class="n">ls</span>
+</pre></div>
+
+
+<h3>回到screen</h3>
+<div class="highlight"><pre><span class="n">screen</span> <span class="o">-</span><span class="n">r</span>
+</pre></div>
+
+
+<hr />
+<h3>Reference</h3>
+<p>+<a href="http://go-linux.blogspot.tw/2007/12/liunx-command-screen.html">Linux command: screen</a></p>
+            </div>
+            <!-- /.entry-content -->
+    <hr />
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    </div>
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5285f2764e3bc5a1"></script>
+
+    <!-- AddThis Smart Layers BEGIN -->
+    <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5285f2764e3bc5a1"></script>
+    <script type="text/javascript">
+        addthis.layers({
+            'theme' : 'transparent',
+            'share' : {
+              'position' : 'left',
+              'services' : 'facebook,twitter,google_plusone_share,more'
+              // 'numPreferredServices' : 5
+            }   
+        });
+    </script>
+    <!-- AddThis Smart Layers END -->
+    <!-- AddThis Button END -->
+        </article>
+    </section>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -100,6 +194,7 @@
         ga('create', 'UA-45819207-1', 'richohan.github.io');
         ga('send', 'pageview');
     </script>
+
         </div>
         <div class="col-lg-3 well well-sm" id="sidebar">
 <aside>
