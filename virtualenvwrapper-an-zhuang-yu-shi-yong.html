@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>設定 OS X Terminal 下的 .bashrc</title>
+    <title>Virtualenvwrapper 安裝與使用</title>
     <link rel="shortcut icon" href="http://RichoHan.github.com/theme/image/network2.png">
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,9 +13,9 @@
     <!-- Open Graph tags -->
 
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="設定 OS X Terminal 下的 .bashrc"/>
-            <meta property="og:url" content="http://RichoHan.github.com/she-ding-os-x-terminal-xia-de-bashrc.html"/>
-            <meta property="og:description" content="Setting .bashrc under OS X terminal"/>
+            <meta property="og:title" content="Virtualenvwrapper 安裝與使用"/>
+            <meta property="og:url" content="http://RichoHan.github.com/virtualenvwrapper-an-zhuang-yu-shi-yong.html"/>
+            <meta property="og:description" content="Setup of virtualenvwrapper for virtualenv"/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://RichoHan.github.com/theme/css/bootstrap.min.css" type="text/css"/>
@@ -59,7 +59,7 @@
                         <li >
                             <a href="http://RichoHan.github.com/category/hci.html">HCI</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="http://RichoHan.github.com/category/os-x.html">OS X</a>
                         </li>
                         <li >
@@ -68,7 +68,7 @@
                         <li >
                             <a href="http://RichoHan.github.com/category/pelican.html">Pelican</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://RichoHan.github.com/category/python.html">Python</a>
                         </li>
                         <li >
@@ -90,10 +90,10 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://RichoHan.github.com/she-ding-os-x-terminal-xia-de-bashrc.html"
+                    <a href="http://RichoHan.github.com/virtualenvwrapper-an-zhuang-yu-shi-yong.html"
                        rel="bookmark"
-                       title="Permalink to 設定 OS X Terminal 下的 .bashrc">
-                        設定 OS X Terminal 下的 .bashrc
+                       title="Permalink to Virtualenvwrapper 安裝與使用">
+                        Virtualenvwrapper 安裝與使用
                     </a>
                 </h1>
             </header>
@@ -103,42 +103,94 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="icon-calendar"></i>日 09 3月 2014
+        <i class="icon-calendar"></i>日 27 7月 2014
     </span>
     <span class="label label-default">By</span>
     <a href="http://RichoHan.github.com/author/richo.html"><i class="icon-user"></i>Richo</a>
 
     <span class="label label-default">Category</span>
-    <a href="http://RichoHan.github.com/category/os-x.html">OS X</a>
+    <a href="http://RichoHan.github.com/category/python.html">Python</a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://RichoHan.github.com/tag/os-x.html">OS X</a>
+	<a href="http://RichoHan.github.com/tag/virtualenv.html">Virtualenv</a>
         /
-	<a href="http://RichoHan.github.com/tag/bashrc.html">bashrc</a>
+	<a href="http://RichoHan.github.com/tag/virtualenvwrapper.html">Virtualenvwrapper</a>
+        /
+	<a href="http://RichoHan.github.com/tag/python.html">Python</a>
+        /
+	<a href="http://RichoHan.github.com/tag/os-x.html">OS X</a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <h3>前言</h3>
-<p>最近設定虛擬環境一直出現路徑問題，整理一下以便之後查詢<br />
-作業系統OS X 10.9.2  </p>
+<p>這篇是給知道和會使用virtualenv的OS X user，讓他們在使用virtualenv上更為方便。<br />
+至於安裝過和沒用過virtualenv的可以參考<a href="http://www.openfoundry.org/tw/tech-column/8516-pythons-virtual-environment-and-multi-version-programming-tools-virtualenv-and-pythonbrew">這篇</a>。  </p>
 <hr />
-<h3>當家(~/)目錄下沒有bash相關檔時：</h3>
-<p>建立.bash_profile檔案，內容如下：  </p>
-<div class="highlight"><pre><span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">f</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span> <span class="p">];</span> <span class="n">then</span>  
-    <span class="n">source</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>  
-<span class="n">fi</span>
+<h3>安裝</h3>
+<p>看個人電腦環境，執行：  </p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenvwrapper</span>
 </pre></div>
 
 
-<p>之後再把路徑寫到.bashrc內，沒有的話自己創。  </p>
-<h3>.bash_profile 與 .bashrc 的差別：</h3>
-<h4>.bash_profile</h4>
-<p>輸入帳號密碼登入時，不論遠端或本地，都會執行此設定檔。  </p>
-<h4>.bashrc</h4>
-<p>在已經登入的情況下，開啟終端機視窗（如 Gnome 的 xterm），在命令提示符號出現前，就會先執行 .bashrc 內的指令。  </p>
+<p>or</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenvwrapper</span>
+</pre></div>
+
+
+<p>接著再增加下面三行到你的shell啟動設定檔(.bashrc、.bash_profile或.profile)：  </p>
+<div class="highlight"><pre><span class="n">export</span> <span class="n">WORKON_HOME</span><span class="o">=</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">virtualenvs</span>  
+<span class="n">export</span> <span class="n">PROJECT_HOME</span><span class="o">=</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="n">Devel</span>  
+<span class="n">source</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">virtualenvwrapper</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+
+
+<p>Reload：</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">source</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>
+</pre></div>
+
+
+<hr />
+<h3>使用</h3>
+<p>1.先run</p>
+<div class="highlight"><pre><span class="n">workon</span>
+</pre></div>
+
+
+<p>會發現什麼都沒有。  </p>
+<p>2.run</p>
+<div class="highlight"><pre><span class="n">mkvirtualenv</span> <span class="n">temp</span>
+</pre></div>
+
+
+<p>會建立virtualenv temp，同時也啟動它。  </p>
+<p>3.再run</p>
+<div class="highlight"><pre><span class="n">workon</span>
+</pre></div>
+
+
+<p>會發現有一個temp被建立了。  </p>
+<p>4.解除虛擬環境的方式跟virtualenv的預設方式一樣，run</p>
+<div class="highlight"><pre><span class="n">deactivate</span>
+</pre></div>
+
+
+<p>5.當下次想用再次使用虛擬環境時，可以先下workon查看，再下workon+虛擬環境名稱：</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">workon</span>  
+<span class="n">temp1</span> <span class="n">temp2</span>  
+<span class="err">$</span> <span class="n">workon</span> <span class="n">temp1</span>  
+<span class="p">(</span><span class="n">temp1</span><span class="p">)</span><span class="err">$</span>
+</pre></div>
+
+
+<p>6.刪除虛擬環境，run：  </p>
+<div class="highlight"><pre><span class="n">rmvirtualenv</span> <span class="n">temp</span>
+</pre></div>
+
+
 <hr />
 <h3>Reference</h3>
-<p>+<a href="http://coder.aqualuna.me/2012/03/bashrc-in-mac-terminal-os-x-lion.html">設定 Mac Terminal 下的 .bashrc</a></p>
+<p>+<a href="http://www.openfoundry.org/tw/tech-column/8516-pythons-virtual-environment-and-multi-version-programming-tools-virtualenv-and-pythonbrew">Python 的虛擬環境及多版本開發利器─Virtualenv 與 Pythonbrew</a><br />
++<a href="http://virtualenvwrapper.readthedocs.org/en/latest/install.html">Installation of virtualenvwrapper</a>  </p>
             </div>
             <!-- /.entry-content -->
     <hr />
