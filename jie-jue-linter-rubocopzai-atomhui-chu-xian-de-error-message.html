@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Author list">
-        <meta name="keywords" content="">
+        <meta name="description" content="前言 Rubocop是給寫Ruby時的。 Error Error: env: ruby_executable_hooks: No such file or directory Error: env: ruby_executable_hooks: No such file or directory at ...">
+        <meta name="keywords" content="atom, linter, rubocop, soa">
         <link rel="icon" href="/favicon.ico">
 
-        <title>Author list - Note for Richo</title>
+        <title>解決linter-rubocop在Atom會出現的error message - Note for Richo</title>
 
         <!-- Stylesheets -->
         <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
     <body>
 
         <!-- Header -->
-    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images//cover.jpg'); background-position: center; ">
+    <div class="header-container gradient">
 
             <!-- Static navbar -->
             <div class="container">
@@ -51,17 +51,23 @@
             <!-- /Static navbar -->
 
             <!-- Header -->
+    <!-- Header -->
     <div class="container header-wrapper">
         <div class="row">
               <div class="col-lg-12">
                   <div class="header-content">
-                      <h1 class="header-title text-uppercase">Author list</h1>
+                      <h1 class="header-title">解決linter-rubocop在Atom會出現的error message</h1>
+                      <p class="header-date"> <a href="/author/richo.html">Richo</a>, 六 26 9月 2015,  <a href="/category/tools.html">Tools</a></p>
                       <div class="header-underline"></div>
-                      <p class="header-subtitle header-subtitle-homepage">Archives listed by author</p>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="/tag/atom.html">atom</a>, <a href="/tag/linter.html">linter</a>, <a href="/tag/rubocop.html">rubocop</a>, <a href="/tag/soa.html">soa</a>                      </p>
                   </div>
               </div>
         </div>
     </div>
+    <!-- /Header -->
             <!-- /Header -->
 
         </div>
@@ -69,48 +75,45 @@
 
 
         <!-- Content -->
-    <div class="archive-container">
-        <div class="container content archive">
-            <h2><a href="/author/richo.html">Richo</a></h2>
-            <dl class="dl-horizontal">
-            	<dt>六 26 9月 2015</dt>
-            	<dd><a href="/jie-jue-linter-rubocopzai-atomhui-chu-xian-de-error-message.html">解決linter-rubocop在Atom會出現的error message</a></dd>
-            	<dt>日 27 7月 2014</dt>
-            	<dd><a href="/virtualenvwrapper-an-zhuang-yu-shi-yong.html">Virtualenvwrapper 安裝與使用</a></dd>
-            	<dt>二 24 6月 2014</dt>
-            	<dd><a href="/pycon-2014.html">PyCon 2014</a></dd>
-            	<dt>二 20 5月 2014</dt>
-            	<dd><a href="/screen-yong-fa.html">screen 用法</a></dd>
-            	<dt>三 14 5月 2014</dt>
-            	<dd><a href="/nohup-yong-fa.html">Nohup 用法</a></dd>
-            	<dt>二 22 4月 2014</dt>
-            	<dd><a href="/scala-sbt-shou-dong-an-zhuang-bao-cuo.html">Scala - sbt 手動安裝報錯</a></dd>
-            	<dt>六 29 3月 2014</dt>
-            	<dd><a href="/heroku-permission-denied-publickey-fatal-could-not-read-from-remote-repository.html">Heroku - 'Permission denied (publickey) fatal: Could not read from remote repository'</a></dd>
-            	<dt>五 28 3月 2014</dt>
-            	<dd><a href="/bu-shu-django-dao-heroku.html">部署 Django 到 Heroku</a></dd>
-            	<dt>二 25 3月 2014</dt>
-            	<dd><a href="/scala-sbt-huan-jing-an-zhuang.html">Scala - sbt 環境安裝</a></dd>
-            	<dt>一 10 3月 2014</dt>
-            	<dd><a href="/yong-homebrewzhuang-mysqlshi-de-wen-ti-zheng-li-yu-jie-jue-fang-fa.html">用Homebrew裝MySQL時的問題整理與解決方法</a></dd>
-            	<dt>日 09 3月 2014</dt>
-            	<dd><a href="/she-ding-os-x-terminal-xia-de-bashrc.html">設定 OS X Terminal 下的 .bashrc</a></dd>
-            	<dt>六 01 3月 2014</dt>
-            	<dd><a href="/cafe-recommendation.html">Cafe Recommendation</a></dd>
-            	<dt>二 04 2月 2014</dt>
-            	<dd><a href="/coursera-hci-rapid-prototypingshang.html">Coursera - HCI : Rapid Prototyping(上)</a></dd>
-            	<dt>日 02 2月 2014</dt>
-            	<dd><a href="/coursera-hci-needfinding.html">Coursera - HCI : Needfinding</a></dd>
-            	<dt>四 05 12月 2013</dt>
-            	<dd><a href="/zheng-ming-112.html">證明1+1=2</a></dd>
-            	<dt>一 02 12月 2013</dt>
-            	<dd><a href="/database-migration-in-django.html">Database Migration in Django</a></dd>
-            	<dt>六 16 11月 2013</dt>
-            	<dd><a href="/ti-huan-pelicanzhu-ti.html">替換Pelican主題</a></dd>
-            	<dt>五 15 11月 2013</dt>
-            	<dd><a href="/yong-pelican-github-pagejian-li-ge-ren-bu-luo-ge.html">用Pelican + Github Page建立個人部落格</a></dd>
-            </dl>
-        </div>
+    <div class="container content">
+        <h3>前言</h3>
+<p>Rubocop是給寫Ruby時的。</p>
+<hr />
+<h3>Error</h3>
+<div class="highlight"><pre><span class="n">Error</span><span class="o">:</span> <span class="n">env</span><span class="o">:</span> <span class="n">ruby_executable_hooks</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
+<span class="n">Error</span><span class="o">:</span> <span class="n">env</span><span class="o">:</span> <span class="n">ruby_executable_hooks</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
+    <span class="n">at</span> <span class="sr">/Users/Richo/.atom/packages/linter-rubocop/i</span><span class="n">ndex</span><span class="o">.</span><span class="na">coffee</span><span class="o">:</span><span class="mi">18</span><span class="o">:</span><span class="mi">15</span>
+</pre></div>
+
+
+<hr />
+<h3>Solution</h3>
+<p>按照官方的設定教學，我們在搜尋rubocop的path時會出現：</p>
+<div class="highlight"><pre>which rubocop
+/Users/username/.rvm/gems/ruby-2.2.1/bin/rubocop
+</pre></div>
+
+
+<p>導致，Atom的設定會變成：</p>
+<div class="highlight"><pre>&#39;linter-rubocop&#39;:
+    &#39;executablePath&#39;: &#39;/Users/username/.rvm/gems/ruby-2.2.1/bin/rubocop&#39;
+</pre></div>
+
+
+<p>此時換成：</p>
+<div class="highlight"><pre>&#39;linter-rubocop&#39;:
+&#39;executablePath&#39;: &#39;/Users/username/.rvm/gems/ruby-2.2.1/wrappers/rubocop&#39;
+</pre></div>
+
+
+<p>重啟Atom，便不會再出現error message。</p>
+<hr />
+<h3>Reference</h3>
+<p>+<a href="https://atom.io/packages/linter-rubocop">linter-rubocop</a><br />
++<a href="https://github.com/AtomLinter/linter-scss-lint/issues/68#issuecomment-137231010">Linter can't find env: ruby_executable_hooks</a></p>
+
+
+        
     </div>
         <!-- /Content -->
 
